@@ -4,7 +4,7 @@ import {FeatureAppLoader, FeatureHubContextProvider} from '@feature-hub/react';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-const {featureAppManager} = createFeatureHub('test:todomvc-integrator', {
+const {featureAppManager} = createFeatureHub('consumer:integrator', {
   moduleLoader: loadAmdModule,
   providedExternals: {
     react: "16.7.0"
@@ -18,9 +18,10 @@ ReactDOM.render(
     <section className="integrator">
       <FeatureAppLoader
         featureAppId="consumer:index"
-        src="feature-app-consumer.umd.js"
+        baseUrl="https://featurehub.s3.amazonaws.com/consumer-app/feature-app-consumer.umd.js"
+        src='feature-app-consumer.umd.js'
       />
     </section>
   </FeatureHubContextProvider>,
-  document.getElementById('app')
+  document.querySelector('main')
 );

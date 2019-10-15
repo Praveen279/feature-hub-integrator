@@ -33,9 +33,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/integrator',
+    path: __dirname + '/',
     publicPath: '/',
-    filename: 'feature-hub-integrator.js'
+    filename: 'integrator.js'
   },
   plugins: [
     new HtmlWebPackPlugin({
